@@ -1,16 +1,80 @@
-# React + Vite
+# Go Business Referral Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite dashboard for viewing referral metrics, service summary data, and referral details. The app uses JWT cookie authentication, protected routes, and data from a backend API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Login page with email and password authentication
+- Protected dashboard and referral detail routes
+- Overview cards for key referral metrics
+- Service summary section with copyable referral link and code
+- Referrals table for tracking referral activity
+- 404 page for unmatched routes
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- React Router DOM
+- js-cookie for JWT storage
+- Vite
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/pages/Login` handles sign-in
+- `src/pages/Dashboard` renders the main referral dashboard
+- `src/pages/ReferralDetails` shows details for a single referral
+- `src/components/ProtectedRoute` guards authenticated pages
+- `src/components/Navbar`, `Footer`, and `ReferralsTable` provide shared UI
+
+## Routes
+
+- `/login` - sign-in page
+- `/` - protected dashboard
+- `/referral/:id` - protected referral details page
+- `*` - not found page
+
+## API
+
+The app currently calls these backend endpoints:
+
+- `POST /api/auth/signin` for login
+- `GET /api/referrals` for dashboard data
+
+On successful login, the app stores the returned JWT in a cookie named `jwt_token`.
+
+## Getting Started
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the development server:
+
+```bash
+npm run dev
+```
+
+3. Build for production:
+
+```bash
+npm run build
+```
+
+4. Preview the production build:
+
+```bash
+npm run preview
+```
+
+5. Run linting:
+
+```bash
+npm run lint
+```
+
+## Notes
+
+- The dashboard reads the JWT from `jwt_token` and includes it in the `Authorization` header.
+- The app is configured for Vercel deployment through `vercel.json`.

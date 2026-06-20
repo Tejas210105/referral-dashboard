@@ -1,0 +1,182 @@
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.dashboard-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.dashboard-subtitle {
+  color: #64748b;
+  margin-bottom: 36px;
+  font-size: 16px;
+}
+
+.overview-section,
+.service-summary-section,
+.share-section,
+.table-section {
+  margin-top: 40px;
+}
+
+.overview-section h2,
+.service-summary-section h2,
+.share-section h2,
+.table-section h2 {
+  margin-bottom: 20px;
+  color: #1e293b;
+  font-size: 28px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.metric-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 22px;
+  transition: all 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.metric-label {
+  color: #64748b;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.metric-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.summary-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.summary-item {
+  min-width: 180px;
+}
+
+.summary-label {
+  display: block;
+  color: #64748b;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.summary-item p {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 4px;
+}
+
+.share-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.share-field {
+  margin-bottom: 24px;
+}
+
+.share-field:last-child {
+  margin-bottom: 0;
+}
+
+.share-field label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.copy-wrapper {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.copy-wrapper input {
+  flex: 1;
+  height: 46px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+.copy-wrapper button {
+  width: 100px !important;
+  height: 42px !important;
+  min-width: 100px !important;
+  max-width: 100px !important;
+  flex: none !important;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.copy-wrapper button:hover {
+  background: #1d4ed8 !important;
+}
+
+.status-text {
+  text-align: center;
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px;
+  }
+
+  .dashboard-title {
+    font-size: 36px;
+  }
+
+  .summary-card {
+    flex-direction: column;
+  }
+
+  .copy-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .copy-wrapper button {
+    width: 100%;
+    max-width: 100%;
+  }
+}
